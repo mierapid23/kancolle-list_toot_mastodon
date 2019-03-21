@@ -11,6 +11,7 @@ def filecheck(f, text):
 		return
 
 def tootdomain():
+	filecheck("api_base_url.txt", "認証")
 	api_base_url_text = open("api_base_url.txt", "r")
 	api_url = api_base_url_text.read()
 	api_base_url_text.close()
@@ -18,7 +19,6 @@ def tootdomain():
 
 def login(domain):
 	#認証ファイルチェック
-	filecheck("api_base_url.txt", "認証")
 	filecheck("my_clientcred.txt", "認証")
 	filecheck("my_usercred.txt", "認証")
 
