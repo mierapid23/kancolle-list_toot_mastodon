@@ -1,10 +1,10 @@
 from mastodon import Mastodon
 
-print("Instance URL e.g.:https://kancolle.social")
+print("インスタンスのドメイン e.g.:kancolle.social")
 URL = input()
-print("mail address e.g.:example@examle.com")
+print("メールアドレス e.g.:example@examle.com")
 mail = input()
-print("password")
+print("パスワード")
 passwd = input()
 
 Mastodon.create_app("kancolle list toot Mastodon", api_base_url = URL , to_file = "my_clientcred.txt")
