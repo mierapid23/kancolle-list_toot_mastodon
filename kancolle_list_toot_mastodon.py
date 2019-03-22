@@ -20,7 +20,7 @@ def tootdomain():
 def login(domain):
 	#認証ファイルチェック
 	filecheck("my_clientcred.txt", "認証")
-	filecheck("my_usercred.txt", "認証")
+	filecheck("./my_usercred.txt", "認証")
 
 	#ログイン部
 	mastodon = Mastodon(
@@ -30,7 +30,11 @@ def login(domain):
 	)
 	return mastodon
 	
-def toot(media):
+def main():
+	#pathの設定
+	os.chdir(os.path.dirname(sys.argv[0]))
+	media = sys.argv[1]
+
 	#Tootメディアのチェック
 	filecheck(media, "tootする")
 
@@ -92,4 +96,4 @@ if __name__ == '__main__':
 		print("引数が不正です")
 		sys.exit(1)
 
-	toot(sys.argv[1])
+	main()
